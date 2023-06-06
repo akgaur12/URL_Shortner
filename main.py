@@ -6,6 +6,7 @@ import requests
 
 bgcolor = 'light green'
 
+# function to implement the URL shortner functionality
 def short_url():
     try:
         en_url_short.delete(0,END)
@@ -19,17 +20,18 @@ def short_url():
     except:
         messagebox.showwarning('URL', 'Enter a link or URL')
     
-
+# Copy URL to Clipboard
 def copy():
     pyperclip.copy(en_url_short.get())
     messagebox.showinfo('URL Copy', "Link/URL Copy successfully")
 
+# function to clear the entry box
 def clear():
     en_url_short.delete(0,END)
     en_url.delete(0,END)
 
-
-
+    
+# Implementing the GUI 
 root = Tk()
 root.title("URL Shortener")
 root.geometry('650x560+420+50')
